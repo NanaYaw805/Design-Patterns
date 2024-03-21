@@ -6,6 +6,10 @@ import AdapterPattern.VividFilter;
 import ChainOfResponsibility.*;
 import CompositePattern.Group;
 import CompositePattern.Shape;
+import Decorator.CloudStream;
+import Decorator.CompressedCloudStream;
+import Decorator.EncryptedCloudStream;
+import Decorator.Stream;
 import ObserverPattern.Books;
 import ObserverPattern.DataSource;
 import ObserverPattern.Library;
@@ -22,9 +26,17 @@ import VisitorPattern.HtmlDocument;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-     var imageview = new ImageView(new Image());
-     imageview.apply(new CaramelFilter(new Caramel()));
 
+      storeCreditCard(new CompressedCloudStream(new EncryptedCloudStream(new CloudStream())));
+    }
+
+
+
+
+    public static void storeCreditCard(Stream stream)
+    {
+
+        stream.write("1314-365365-363546-4764654");
 
     }
 }

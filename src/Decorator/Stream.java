@@ -1,2 +1,6 @@
-package Decorator;public class Stream {
+package Decorator;
+
+public interface Stream {
+    void write(String data);
+
 }
