@@ -1,3 +1,8 @@
+import AdapterPattern.Avafilters.Caramel;
+import AdapterPattern.CaramelFilter;
+import AdapterPattern.Image;
+import AdapterPattern.ImageView;
+import AdapterPattern.VividFilter;
 import ChainOfResponsibility.*;
 import CompositePattern.Group;
 import CompositePattern.Shape;
@@ -17,18 +22,8 @@ import VisitorPattern.HtmlDocument;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-       var group1 = new Group();
-       group1.add(new Shape());
-       group1.add(new Shape());
-
-       var group2 = new Group();
-        group2.add(new Shape());
-        group2.add(new Shape());
-
-        var group = new Group();
-        group.add(group1);
-        group.add(group2);
-        group.render(); 
+     var imageview = new ImageView(new Image());
+     imageview.apply(new CaramelFilter(new Caramel()));
 
 
     }
