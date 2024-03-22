@@ -13,6 +13,9 @@ import Decorator.Stream;
 import FacadePattern.Message;
 import FacadePattern.NotificationServer;
 import FacadePattern.NotificationService;
+import FlyweightPattern.Point;
+import FlyweightPattern.PointIconFactory;
+import FlyweightPattern.PointService;
 import ObserverPattern.Books;
 import ObserverPattern.DataSource;
 import ObserverPattern.Library;
@@ -25,13 +28,19 @@ import VisitorPattern.HeadingNode;
 import VisitorPattern.HighLightOperation;
 import VisitorPattern.HtmlDocument;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
 
-            var service = new NotificationService();
-            service.send("Hello World","target");
+        List<Point> the_point = new PointService(new PointIconFactory()).getPoints();
+        for (var p:the_point){
+            p.draw();
+        }
+
 
 
     }

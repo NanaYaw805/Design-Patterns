@@ -15,7 +15,7 @@ public class Subject {
     }
 
     public void updateObservers() {
-        for(Observer observer:observers){
+        for(var observer:observers){
             observer.update();
         }
     }
