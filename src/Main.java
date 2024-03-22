@@ -10,6 +10,9 @@ import Decorator.CloudStream;
 import Decorator.CompressedCloudStream;
 import Decorator.EncryptedCloudStream;
 import Decorator.Stream;
+import FacadePattern.Message;
+import FacadePattern.NotificationServer;
+import FacadePattern.NotificationService;
 import ObserverPattern.Books;
 import ObserverPattern.DataSource;
 import ObserverPattern.Library;
@@ -27,16 +30,14 @@ import VisitorPattern.HtmlDocument;
 public class Main {
     public static void main(String[] args) {
 
-      storeCreditCard(new CompressedCloudStream(new EncryptedCloudStream(new CloudStream())));
+            var service = new NotificationService();
+            service.send("Hello World","target");
+
+
     }
 
 
 
 
-    public static void storeCreditCard(Stream stream)
-    {
 
-        stream.write("1314-365365-363546-4764654");
-
-    }
 }
