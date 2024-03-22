@@ -3,6 +3,8 @@ import AdapterPattern.CaramelFilter;
 import AdapterPattern.Image;
 import AdapterPattern.ImageView;
 import AdapterPattern.VividFilter;
+import Bridge.RemoteControl;
+import Bridge.sony;
 import ChainOfResponsibility.*;
 import CompositePattern.Group;
 import CompositePattern.Shape;
@@ -35,11 +37,8 @@ import java.util.List;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-
-        List<Point> the_point = new PointService(new PointIconFactory()).getPoints();
-        for (var p:the_point){
-            p.draw();
-        }
+            var remoteControl = new RemoteControl(new sony());
+            remoteControl.turnOff();
 
 
 
